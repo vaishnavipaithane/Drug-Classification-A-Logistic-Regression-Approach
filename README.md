@@ -44,15 +44,40 @@ Train Accuracy: 100%
 
 **Confusion Matrix:**
 
-Test Set: Shows good performance with a few misclassifications, particularly for classes drugB and drugC.
+- Test Set: 
+```python
+Confusion Matrix_Test:
+[[ 7  0  0  0  0]
+ [ 0  5  0  0  0]
+ [ 0  0  5  0  0]
+ [ 0  0  0 16  0]
+ [ 0  3  0  0 24]]
+```
+![Confusion Matrix test](Confusion-Matrix-Test.png)
 
-Train Set: The model showed perfect classification, which is expected given the 100% training accuracy.
+This model shows good performance with a few misclassifications, particularly for classes drugB and drugC where 3 instances of drugB were misclassified as drugC.
+
+- Train Set: 
+```python
+Confusion Matrix_Train:
+[[16  0  0  0  0]
+ [ 0 11  0  0  0]
+ [ 0  0 11  0  0]
+ [ 0  0  0 38  0]
+ [ 0  0  0  0 64]]
+```
+![Confusion Matrix Train](Confusion-Matrix-Train.png)
+
+The model showed perfect classification, which is expected given the 100% training accuracy.
 
 ## Conclusions
 
 - The multinomial logistic regression model with optimized hyperparameters achieved high accuracy on both the test and training datasets, indicating the model's effective learning from the data.
-- The confusion matrix for the test set shows that the model performed excellently with a high number of correct predictions and minimal misclassifications, though there are specific areas (e.g., distinguishing drug types B and C) where improvements could be made. This suggests that drugB and drugC might have similar feature profiles, confusing the model.
+  
+- The confusion matrix for the test set shows that the model performed excellently with a high number of correct predictions and minimal misclassifications. The only misclassifications occurred with drugB, which were sometimes predicted as drugC. This suggests that drugB and drugC might have similar feature profiles, confusing the model.
+  
 - This model has proven to be an efficient tool for classifying different types of drugs based on the given features.
+  
 - The model's performance metrics show its potential for practical applications, such as assisting healthcare professionals in drug classification and prescription systems. 
 
 ## Future Work 
