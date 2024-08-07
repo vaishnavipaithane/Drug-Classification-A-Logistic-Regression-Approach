@@ -34,7 +34,7 @@ A [bar plot](https://github.com/vaishnavipaithane/Drug-Classification-A-Multinom
 
 **Pipeline and Grid Search:** A pipeline was created for scaling and model training, and GridSearchCV was used for hyperparameter tuning to identify the best regularization parameter (C) with L2 regularization. The model was trained on the training set, and the best parameters identified were  {'logisticregression__C': 100.0, 'logisticregression__penalty': 'l2'}.
 
-Evaluated the model’s accuracy on both training and test datasets. Generated and analyzed confusion matrices for both training and test sets to assess the model's classification performance.
+Evaluated and analyzed the model’s accuracy and confusion matrices for both training and test sets to assess the model's classification performance.
 
 **Accuracy:** 
 
