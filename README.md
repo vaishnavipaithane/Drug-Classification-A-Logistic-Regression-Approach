@@ -8,13 +8,17 @@ In this analysis, we aimed to classify five different types of drugs (Drug A, Dr
 
 - Imported the necessary libraries (e.g., Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn).
 
-- Dataset ([drug_sample.csv](https://github.com/vaishnavipaithane/Drug-Classification-A-Multinomial-Logistic-Regression-Approach/blob/main/drug_sample.csv)) was provided by NyBerman Bioinformatics and it was loaded to jupyter notebook. The dataset consisted of 200 records with features such as Age, Sex, BP, Cholesterol, and Na_to_K, with the target variable being the drug type.
+- Dataset ([drug_sample.csv](https://github.com/vaishnavipaithane/Drug-Classification-A-Multinomial-Logistic-Regression-Approach/blob/main/drug_sample.csv)) was provided by NyBerman Bioinformatics and it was loaded to jupyter notebook. The dataset consisted of 200 records with features and the target variable.
 
 **2. Data Preprocessing:**
    
-- Separated the features and target variable from the dataset.
+- Separated the features (Age, Sex, BP, Cholesterol, Na_to_K) and target variable (drug) from the dataset.
 
-- Categorical variables (Sex, BP, Cholesterol, Drug) were identified and encoded using OneHotEncoder. The target variable was label-encoded using LabelEncoder.
+- **Label Encoding for Target:** The target variable (Drug) was label-encoded into numerical values.
+
+- **One-Hot Encoding for Categorical Features:** Categorical features (Sex, BP, Cholesterol) were identified and transformed into a one-hot encoded matrix.
+
+- **Combining Features:** Non-categorical features (Age, Na_to_K) were combined with the one-hot encoded categorical features into a final feature matrix.
 
 **3. Exploratory Data Analysis (EDA):**
 
@@ -22,25 +26,38 @@ A [bar plot](https://github.com/vaishnavipaithane/Drug-Classification-A-Multinom
 
 **4. Model Training and Evaluation**
 
-- The dataset was split into training (70%) and testing (30%) sets. A stratified split was performed to ensure the class distribution was maintained in both sets.
+- **Train-Test Split:** The dataset was split into training (70%) and testing (30%) sets. A stratified split was performed to ensure the class distribution is maintained in both sets.
 
-- A logistic regression model was defined and tuned using GridSearchCV for hyperparameter tuning to identify the best regularization parameter (C) with L2 regularization. The model was trained on the training set, and the best parameters identified were {'C': 1.0, 'penalty': 'l2'}.
+- **Logistic Regression Model:**
 
-- Evaluated the model’s accuracy on both training and test datasets. Generated and analyzed confusion matrices for both training and test sets to assess the model's classification performance.
+**Standardization:** Features were standardized using StandardScaler.
 
-Accuracy: The model achieved an accuracy of 100% on both the training and testing datasets, indicating a perfect fit.
+**Pipeline and Grid Search:** A pipeline was created for scaling and model training, and GridSearchCV was used for hyperparameter tuning to identify the best regularization parameter (C) with L2 regularization. The model was trained on the training set, and the best parameters identified were  {'logisticregression__C': 100.0, 'logisticregression__penalty': 'l2'}.
 
-Confusion Matrix: The confusion matrices for both the training and testing sets showed that the model correctly classified all instances without any misclassifications.
+Evaluated the model’s accuracy on both training and test datasets. Generated and analyzed confusion matrices for both training and test sets to assess the model's classification performance.
+
+**Accuracy:** 
+
+Test Accuracy: 95% 
+
+Train Accuracy: 100%
+
+**Confusion Matrix:**
+
+Test Set: Shows good performance with a few misclassifications, particularly for classes drugC and drugX.
+
+Train Set: The model showed perfect classification, which is expected given the 100% training accuracy.
 
 ## Conclusions
 
-- The multinomial logistic regression model has proven to be an effective tool for on this dataset, achieving perfect classification accuracy. This suggests that the features used are highly predictive of the drug type.
-- The model's performance metrics show its potential for practical applications, such as assisting healthcare professionals in drug classification and prescription systems.
-- However, achieving perfect accuracy in both training and testing sets often requires a note of caution, as it may indicate overfitting, particularly if the dataset is relatively small. 
+- The multinomial logistic regression model with optimized hyperparameters achieved high accuracy on both the test and training datasets, indicating the model's effective learning from the data.
+- The confusion matrix for the test set shows that the model performs well with minimal misclassifications, though there are specific areas (e.g., distinguishing drug types C and X) where improvements could be made.
+- This model has proven to be an efficient tool for classifying different types of drugs based on the given features.
+- The model's performance metrics show its potential for practical applications, such as assisting healthcare professionals in drug classification and prescription systems. 
 
 ## Future Work 
 
-Suggest possible improvements or future work, such as exploring other models, feature engineering, cross-validation or collecting more data to enhance model performance.
+Suggest possible improvements or future work, such as exploring additional model evaluation metrics, experimenting with other models, feature engineering, cross-validation or collecting more data to enhance model performance.
 
 This concludes the analysis and classification of the drug dataset using multinomial logistic regression. The results indicate a highly accurate model, though further validation is suggested to ensure robustness.
 
