@@ -1,6 +1,6 @@
 # Drug Classification: A Multinominal Logistic Repression Approach
 
-In this analysis, we aimed to classify five different types of drugs (Drug Y, Drug C, Drug X, Drug A, and Drug B) using a multinomial logistic regression model. The approach involved a comprehensive set of steps to preprocess the data, explore its characteristics, and train a robust classification model. Below is a summary of our process and findings.
+In this analysis, we aimed to classify five different types of drugs (Drug Y, Drug C, Drug X, Drug A, and Drug B) using a multinomial logistic regression model. The approach involved a comprehensive set of steps to preprocess the data, explore its characteristics, and train a robust classification model. Below is a summary of the process and findings.
 
 ## Summary of the analysis process
 
